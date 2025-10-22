@@ -1,0 +1,369 @@
+/* Post Page Specific Styles (restored from backup) */
+
+/* Post Container */
+.post-container {
+    max-width: 800px;
+    margin: 120px auto 4rem;
+    padding: 0 2rem;
+}
+
+.post-header {
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.back-to-blog {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 600;
+    margin-bottom: 3rem;
+    transition: gap 0.3s ease;
+}
+
+.back-to-blog:hover {
+    gap: 1rem;
+}
+
+.post-meta {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+    color: #64748b;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.post-title {
+    font-size: 3rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #ffffff 0%, #94a3b8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    letter-spacing: -2px;
+}
+
+.post-description {
+    font-size: 1.25rem;
+    color: #94a3b8;
+    line-height: 1.7;
+}
+
+/* Markdown Content Styles */
+.post-content {
+    color: #cbd5e1;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.post-content h2 {
+    font-size: 2rem;
+    color: #f1f5f9;
+    margin: 3rem 0 1.5rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+.post-content h3 {
+    font-size: 1.5rem;
+    color: #f1f5f9;
+    margin: 2.5rem 0 1.25rem;
+    font-weight: 700;
+}
+
+.post-content h4 {
+    font-size: 1.25rem;
+    color: #f1f5f9;
+    margin: 2rem 0 1rem;
+    font-weight: 700;
+}
+
+.post-content p {
+    margin-bottom: 1.5rem;
+}
+
+.post-content ul, .post-content ol {
+    margin-bottom: 1.5rem;
+    padding-left: 2rem;
+}
+
+.post-content li {
+    margin-bottom: 0.75rem;
+}
+
+.post-content a {
+    color: #3b82f6;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(59, 130, 246, 0.3);
+    transition: border-color 0.3s ease;
+}
+
+.post-content a:hover {
+    border-color: #3b82f6;
+}
+
+.post-content blockquote {
+    border-left: 4px solid #3b82f6;
+    padding-left: 1.5rem;
+    margin: 2rem 0;
+    color: #94a3b8;
+    font-style: italic;
+}
+
+.post-content code {
+    background: rgba(30, 41, 59, 0.5);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.95em;
+    color: #f1f5f9;
+    font-family: 'Courier New', monospace;
+}
+
+.post-content pre {
+    background: rgba(30, 41, 59, 0.5);
+    padding: 1.5rem;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin: 2rem 0;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.post-content pre code {
+    background: none;
+    padding: 0;
+}
+
+.post-content img {
+    max-width: 100%;
+    border-radius: 12px;
+    margin: 2rem 0;
+}
+
+.post-content strong {
+    color: #f1f5f9;
+    font-weight: 700;
+}
+
+.post-content em {
+    color: #94a3b8;
+}
+
+.post-content hr {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 3rem 0;
+}
+
+.loading {
+    text-align: center;
+    padding: 4rem;
+    color: #64748b;
+    font-size: 1.2rem;
+}
+
+/* Responsive - Post specific */
+@media (max-width: 768px) {
+    .post-container {
+        padding: 0 1.5rem;
+    }
+
+    .post-title {
+        font-size: 2rem;
+    }
+
+    .post-description {
+        font-size: 1.1rem;
+    }
+}
+
+/* Post Container */
+.post-container {
+    max-width: 800px;
+    margin: 120px auto 4rem;
+    padding: 0 2rem;
+}
+
+.post-header {
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.back-to-blog {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 600;
+    margin-bottom: 3rem;
+    transition: gap 0.3s ease;
+}
+
+.back-to-blog:hover {
+    gap: 1rem;
+}
+
+.post-meta {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+    color: #64748b;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.post-title {
+    font-size: 3rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #ffffff 0%, #94a3b8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    letter-spacing: -2px;
+}
+
+.post-description {
+    font-size: 1.25rem;
+    color: #94a3b8;
+    line-height: 1.7;
+}
+
+/* Markdown Content Styles */
+.post-content {
+    color: #cbd5e1;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.post-content h2 {
+    font-size: 2rem;
+    color: #f1f5f9;
+    margin: 3rem 0 1.5rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+.post-content h3 {
+    font-size: 1.5rem;
+    color: #f1f5f9;
+    margin: 2.5rem 0 1.25rem;
+    font-weight: 700;
+}
+
+.post-content h4 {
+    font-size: 1.25rem;
+    color: #f1f5f9;
+    margin: 2rem 0 1rem;
+    font-weight: 700;
+}
+
+.post-content p {
+    margin-bottom: 1.5rem;
+}
+
+.post-content ul, .post-content ol {
+    margin-bottom: 1.5rem;
+    padding-left: 2rem;
+}
+
+.post-content li {
+    margin-bottom: 0.75rem;
+}
+
+.post-content a {
+    color: #3b82f6;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(59, 130, 246, 0.3);
+    transition: border-color 0.3s ease;
+}
+
+.post-content a:hover {
+    border-color: #3b82f6;
+}
+
+.post-content blockquote {
+    border-left: 4px solid #3b82f6;
+    padding-left: 1.5rem;
+    margin: 2rem 0;
+    color: #94a3b8;
+    font-style: italic;
+}
+
+.post-content code {
+    background: rgba(30, 41, 59, 0.5);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.95em;
+    color: #f1f5f9;
+    font-family: 'Courier New', monospace;
+}
+
+.post-content pre {
+    background: rgba(30, 41, 59, 0.5);
+    padding: 1.5rem;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin: 2rem 0;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.post-content pre code {
+    background: none;
+    padding: 0;
+}
+
+.post-content img {
+    max-width: 100%;
+    border-radius: 12px;
+    margin: 2rem 0;
+}
+
+.post-content strong {
+    color: #f1f5f9;
+    font-weight: 700;
+}
+
+.post-content em {
+    color: #94a3b8;
+}
+
+.post-content hr {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 3rem 0;
+}
+
+.loading {
+    text-align: center;
+    padding: 4rem;
+    color: #64748b;
+    font-size: 1.2rem;
+}
+
+/* Responsive - Post specific */
+@media (max-width: 768px) {
+    .post-container {
+        padding: 0 1.5rem;
+    }
+
+    .post-title {
+        font-size: 2rem;
+    }
+
+    .post-description {
+        font-size: 1.1rem;
+    }
+}
