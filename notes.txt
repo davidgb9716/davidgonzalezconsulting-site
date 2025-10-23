@@ -1,2 +1,0 @@
-Falta:
-- Estandares de seguridad (best practices).

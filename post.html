@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="post-title">Post | David González Consulting</title>
     <meta name="description" id="post-description" content="">
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <!-- Content Security: load a pinned version of marked with Subresource Integrity -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline';">
+    <script src="https://cdn.jsdelivr.net/npm/marked@4.3.0/marked.min.js" integrity="sha384-QsSpx6a0USazT7nK7w8qXDgpSAPhFsb2XtpoLFQ5+X2yFN6hvCKnwEzN8M5FWaJb" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="scripts/posts-config.js"></script>
@@ -81,59 +83,6 @@
         </div>
     </footer>
 
-    <script>
-    // Obtener slug del URL
-    const urlParams = new URLSearchParams(window.location.search);
-    const slug = urlParams.get('slug');
-
-    if (!slug) {
-        window.location.href = 'blog.html';
-    }
-
-    // Usar la configuración centralizada cargada desde scripts/posts-config.js
-    const postData = (window.postsConfig || []).find(p => p.slug === slug);
-    if (postData) {
-        loadPost(postData);
-    } else {
-        document.getElementById('post-content').innerHTML = '<p>Post no encontrado.</p>';
-    }
-
-    async function loadPost(postData) {
-        try {
-            // Cargar el archivo Markdown
-            console.log('Intentando cargar:', `posts/${slug}.md`);
-            const response = await fetch(`posts/${slug}.md`);
-            console.log('Response:', response);
-            const markdown = await response.text();
-            
-            // Convertir Markdown a HTML
-            const html = marked.parse(markdown);
-            
-            // Calcular tiempo de lectura
-            const wordsPerMinute = 200;
-            const words = markdown.trim().split(/\s+/).length;
-            const minutes = Math.ceil(words / wordsPerMinute);
-            
-            // Formatear fecha
-            const options = { year: 'numeric', month: 'long', day: 'numeric' };
-            const formattedDate = new Date(postData.date).toLocaleDateString('es-ES', options);
-            
-            // Actualizar metadata
-            document.getElementById('post-title').textContent = postData.title + ' | David González Consulting';
-            document.getElementById('post-description').setAttribute('content', postData.description);
-            document.getElementById('article-title').textContent = postData.title;
-            document.getElementById('article-description').textContent = postData.description;
-            document.getElementById('post-date').textContent = formattedDate;
-            document.getElementById('post-reading-time').textContent = `${minutes} min de lectura`;
-            
-            // Renderizar contenido
-            document.getElementById('post-content').innerHTML = html;
-            
-        } catch (error) {
-            console.error('Error cargando el post:', error);
-            document.getElementById('post-content').innerHTML = '<p>Error cargando el contenido del post.</p>';
-        }
-    }
-    </script>
+    <script src="scripts/post-loader.js"></script>
 </body>
 </html>
