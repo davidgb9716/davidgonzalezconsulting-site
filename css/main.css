@@ -160,7 +160,7 @@ nav .nav-toggle {
     left: 0;
     right: 0;
     height: 2px;
-    background: #e6eef8;
+    background: #e6eef8 !important;
     border-radius: 2px;
     transition: transform 0.28s cubic-bezier(.2,.9,.2,1), opacity 0.18s ease;
 }
@@ -284,6 +284,44 @@ nav .nav-links a:hover {
 @media (min-width: 769px) {
     nav .nav-toggle { display: none !important; }
     nav .nav-links { display: flex !important; position: static; transform: none; opacity: 1; background: transparent; box-shadow: none; padding: 0; gap: 1.5rem; border-radius: 0; border: none; }
+}
+
+/* Reparación: forzar estilo de navegación en escritorio */
+@media (min-width: 769px) {
+    /* Asegura que los links del nav se muestren en línea y no estén fijados */
+    nav .nav-links {
+        display: flex !important;
+        position: static !important;
+        right: auto !important;
+        top: auto !important;
+        width: auto !important;
+        max-width: none !important;
+        transform: none !important;
+        opacity: 1 !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        border: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        z-index: auto !important;
+        flex-direction: row !important;
+        gap: 1.5rem !important;
+    }
+
+    /* Oculta el overlay en escritorio por si tapa contenido */
+    .nav-overlay {
+        display: none !important;
+        pointer-events: none !important;
+        opacity: 0 !important;
+    }
+
+    /* Asegura que el toggle esté oculto en escritorio */
+    nav .nav-toggle { display: none !important; }
+}
+
+/* Si el footer sigue tapado por algo, forzar que esté encima del overlay */
+@media (min-width: 769px) {
+    footer { position: relative !important; z-index: 1 !important; }
 }
 
 /* Hero Section */
@@ -813,3 +851,114 @@ html {
 @media (max-width: 420px) {
     .scroll-top { right: 0.5rem; bottom: 0.75rem; width: 40px; height: 40px; }
 }
+
+/* Forzar hamburger aesthetic en móviles y eliminar emoji fallback */
+.nav-toggle .menu-emoji { display: none !important; }
+.nav-toggle .hamburger { display: inline-block !important; width: 22px; height: 14px; position: relative; }
+.nav-toggle .hamburger span { position: absolute; left: 0; right: 0; height: 2px; background: #e6eef8 !important; border-radius: 2px; transition: transform 0.28s cubic-bezier(.2,.9,.2,1), opacity 0.18s ease; }
+.nav-toggle .hamburger span:nth-child(1){ top: 0; }
+.nav-toggle .hamburger span:nth-child(2){ top: 6px; }
+.nav-toggle .hamburger span:nth-child(3){ top: 12px; }
+
+/* active -> X */
+.nav-toggle[aria-expanded="true"] .hamburger span:nth-child(1){
+    transform: translateY(6px) rotate(45deg);
+}
+.nav-toggle[aria-expanded="true"] .hamburger span:nth-child(2){
+    opacity: 0;
+    transform: scaleX(0.5);
+}
+.nav-toggle[aria-expanded="true"] .hamburger span:nth-child(3){
+    transform: translateY(-6px) rotate(-45deg);
+}
+
+/* Asegurar visibilidad en pantallas muy pequeñas */
+@media (max-width: 420px) {
+    nav .nav-toggle { display: inline-flex !important; position: fixed !important; top: 12px !important; right: 12px !important; z-index: 2000 !important; }
+    .nav-toggle .hamburger { display: inline-block !important; }
+}
+
+/* ARREGLAR: forzar visibilidad del nav en escritorio */
+@media (min-width: 769px) {
+    nav .nav-links {
+        display: flex !important;
+        position: static !important;
+        width: auto !important;
+        max-width: none !important;
+        transform: none !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        border: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        z-index: 1000 !important;
+        flex-direction: row !important;
+        gap: 1.5rem !important;
+    }
+
+    nav .nav-links li {
+        display: inline-block !important;
+        transform: none !important;
+        opacity: 1 !important;
+    }
+
+    nav .nav-links a {
+        display: inline-block !important;
+        color: #94a3b8 !important;
+        pointer-events: auto !important;
+    }
+
+    /* ocultar toggle y overlay en escritorio (pero mantener funcionalidad en móvil) */
+    nav .nav-toggle {
+        display: none !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+        opacity: 0 !important;
+    }
+    .nav-overlay {
+        display: none !important;
+        pointer-events: none !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        z-index: -1 !important;
+    }
+
+    /* asegurar footer no quede tapado */
+    footer { position: relative !important; z-index: 1 !important; }
+}
+
+/* Restaurar solo la funcionalidad del menú: botones visibles en escritorio, toggle activo en móvil */
+nav .nav-toggle { display: none !important; visibility: hidden !important; pointer-events: none !important; }
+
+/* Escritorio: enlaces siempre visibles en línea */
+@media (min-width: 769px) {
+    nav .nav-toggle { display: none !important; visibility: hidden !important; pointer-events: none !important; }
+    nav .nav-links {
+        display: flex !important;
+        position: static !important;
+        transform: none !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        border: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        z-index: 1000 !important;
+        flex-direction: row !important;
+        gap: 1.5rem !important;
+    }
+    nav .nav-links li { display: inline-block !important; transform: none !important; opacity: 1 !important; }
+    nav .nav-links a { display: inline-block !important; color: #94a3b8 !important; pointer-events: auto !important; }
+    .nav-overlay { display: none !important; pointer-events: none !important; opacity: 0 !important; visibility: hidden !important; }
+}
+
+/* Móvil: permitir toggle y panel deslizable (mantiene estética existente) */
+@media (max-width: 768px) {
+    nav .nav-toggle { display: inline-flex !important; visibility: visible !important; pointer-events: auto !important; position: relative !important; z-index: 2000 !important; }
+    nav .nav-links { display: none !important; position: fixed !important; top: 64px !important; right: 1rem !important; width: calc(100% - 2rem) !important; max-width: 340px !important; }
+    nav .nav-links.open { display: block !important; opacity: 1 !important; transform: translateY(0) scale(1) !important; }
