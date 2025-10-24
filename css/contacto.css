@@ -3,7 +3,20 @@
 /* Hero Section - Contact specific */
 .hero {
     min-height: 40vh;
-    padding-bottom: 3rem;
+    padding-top: 80px; /* MATCH index spacing */
+    padding-bottom: 4rem; /* MATCH index spacing */
+}
+
+/* Ensure hero text spacing follows index conventions */
+.hero h1 {
+    margin-bottom: 1.5rem; /* MATCH index: h1 bottom spacing */
+    text-align: center;
+}
+
+/* subtitle / paragraph spacing in hero */
+.hero p,
+.hero .subtitle {
+    margin-bottom: 3rem; /* MATCH index: subtitle bottom spacing */
 }
 
 /* Contact Section */
@@ -166,7 +179,7 @@
 .contact-hero h1,
 .contact-title,
 .contact-info h2 {
-    font-size: clamp(1.4rem, 6.5vw, 3rem); /* mismo comportamiento que el index */
+    font-size: clamp(1.4rem, 6.5vw, 3rem); /* same behavior kept */
     line-height: 1.05;
     margin: 0 0 0.5rem;
     max-width: 100%;
@@ -179,6 +192,13 @@
 .contact-hero h1 {
     font-size: 5rem;
     letter-spacing: -3px;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    background: linear-gradient(135deg,#ffffff 0%, #94a3b8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 /* Ajuste para teléfonos muy pequeños */
@@ -234,26 +254,60 @@
     .contact-info h2 {
         font-size: 2rem;
     }
+
+    .hero h1 { font-size: 3rem; letter-spacing: -1px; }
+    .hero p,
+    .hero .subtitle { font-size: 1.15rem; }
 }
 
-/* Forzar comportamiento del container en la página de contacto para evitar overflow */
-.hero > .container,
-.contact-section > .container,
-.contact-wrapper {
-    width: 100%;
-    max-width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    box-sizing: border-box;
+/* Forzar comportamiento del container en la página de contacto para evitar overflow
+   -> Apply only on smaller screens so desktop keeps a narrower centered layout */
+@media (max-width: 1024px) {
+    .hero > .container,
+    .contact-section > .container,
+    .contact-wrapper {
+        width: 100%;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        box-sizing: border-box;
+    }
 }
 
-/* Asegurar que el H1 pueda romperse correctamente si hace falta */
-.hero h1 {
-    white-space: normal !important;
-    overflow-wrap: break-word;
-    word-break: break-word;
-    font-size: 3.5rem;
-    letter-spacing: -3px;
+/* On larger screens restore a centered, narrower column so contact content stays closer to center */
+@media (min-width: 1025px) {
+    .hero > .container,
+    .contact-section > .container {
+        max-width: 1100px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+        box-sizing: border-box;
+    }
+
+    .contact-wrapper {
+        /* keep the earlier grid behavior but constrain overall width */
+        max-width: 1100px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 0;
+        padding-right: 0;
+        box-sizing: border-box;
+    }
+}
+
+/* Forzar tamaño mínimo y centrado de columnas en escritorio */
+@media (min-width: 1025px) {
+    .contact-wrapper {
+        grid-template-columns: 1fr 1fr;
+        max-width: 1100px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 0;
+        padding-right: 0;
+        box-sizing: border-box;
+    }
 }

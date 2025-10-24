@@ -1,71 +1,50 @@
 /* Blog Page Specific Styles (restored from backup) */
 
-/* Blog Section */
-.blog-section {
-    padding: 8rem 0;
-    background: #0f172a;
-}
-
-.blog-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 3rem;
-}
-
-.blog-card {
-    background: linear-gradient(135deg, rgba(30, 41, 59, 0.5) 0%, rgba(15, 23, 42, 0.5) 100%);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 16px;
-    overflow: hidden;
-    transition: all 0.4s ease;
-    cursor: pointer;
-}
-
-.blog-card:hover {
-    transform: translateY(-8px);
-    border-color: rgba(59, 130, 246, 0.3);
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
-}
-
-.blog-image {
-    width: 100%;
-    height: 220px;
-    background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+/* Tighter hero for the Blog page */
+body.blog-page .hero {
+    min-height: 40vh; /* smaller than the global 100vh */
+    padding-top: 80px; /* match index spacing */
+    padding-bottom: 4rem; /* match index spacing */
     display: flex;
-    align-items: center;
+    align-items: center; /* vertically center content */
     justify-content: center;
-    font-size: 3rem;
 }
 
-.blog-content {
-    padding: 2.5rem;
-}
-
-.blog-meta {
-    display: flex;
-    gap: 1.5rem;
-    margin-bottom: 1rem;
-}
-
-.blog-date, .blog-reading-time {
-    color: #64748b;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 600;
-}
-
-.loading {
+/* Slightly smaller, more compact headline on blog */
+body.blog-page .hero h1 {
+    font-size: 5rem;
+    letter-spacing: -3px;
+    line-height: 1.1;
+    margin-bottom: 1.5rem; /* MATCH index: h1 bottom spacing */
     text-align: center;
-    padding: 4rem;
-    color: #64748b;
-    font-size: 1.2rem;
+    background: linear-gradient(135deg,#ffffff 0%, #94a3b8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
+/* Keep paragraph readable and reduce large whitespace */
+body.blog-page .hero p,
+body.blog-page .hero .subtitle {
+    font-size: 1.5rem;
+    color: #64748b;
+    margin: 0 auto 3rem; /* MATCH index: subtitle bottom spacing */
+    max-width: 700px;
+    text-align: center;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+/* Mobile tweaks */
 @media (max-width: 768px) {
-    .blog-grid {
-        grid-template-columns: 1fr;
+    body.blog-page .hero {
+        min-height: auto;
+        padding-top: 72px;
+        padding-bottom: 1.75rem;
     }
+    body.blog-page .hero h1 { font-size: 3rem; letter-spacing: -1px; }
+    body.blog-page .hero p,
+    body.blog-page .hero .subtitle { font-size: 1.15rem; }
 }
 
 /* Blog Section */
