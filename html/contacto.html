@@ -80,8 +80,13 @@
                 <div class="contact-form">
                     <form action="https://formspree.io/f/mwprgrvb" method="POST">
                         <div class="form-group">
-                            <label for="name">Nombre Completo*</label>
+                            <label for="name">Nombre*</label>
                             <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="last-name">Apellido*</label>
+                            <input type="text" id="last-name" name="last-name" required>
                         </div>
 
                         <div class="form-group">
@@ -103,7 +108,7 @@
                             <label for="service">Servicio de Interés*</label>
                             <select id="service" name="service" required>
                                 <option value="">Selecciona una opción</option>
-                                <option value="ia">Implementación de inteligencia artificial</option>
+                                <option value="inteligencia-artificial">Implementación de inteligencia artificial</option>
                                 <option value="data-science">Soluciones de ciencia de datos</option>
                                 <option value="estrategia">Consultoría estratégica</option>
                                 <option value="varios">Varios servicios</option>
