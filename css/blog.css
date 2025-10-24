@@ -1,55 +1,6 @@
 /* Blog page — page-specific hero + responsive tweak (no card rules) */
 
-body.blog-page .hero {
-    min-height: 40vh; /* smaller than the global 100vh */
-    padding-top: 80px;
-    padding-bottom: 3.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-body.blog-page .hero .container {
-    max-width: 900px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 1rem;
-}
-
-body.blog-page .hero h1 {
-    /* responsive, neat sizing instead of fixed huge value */
-    font-size: clamp(2rem, 6vw, 3.5rem);
-    letter-spacing: -1px;
-    line-height: 1.05;
-    margin-bottom: 1.25rem;
-    background: linear-gradient(135deg,#ffffff 0%, #94a3b8 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-body.blog-page .hero p,
-body.blog-page .hero .subtitle {
-    font-size: clamp(1rem, 2.2vw, 1.5rem);
-    color: #64748b;
-    margin: 0 auto 2rem;
-    max-width: 700px;
-    font-weight: 300;
-    line-height: 1.6;
-}
-
-/* Mobile tweaks */
-@media (max-width: 768px) {
-    body.blog-page .hero {
-        min-height: auto;
-        padding-top: 64px;
-        padding-bottom: 1.5rem;
-    }
-    body.blog-page .hero h1 { font-size: clamp(1.6rem, 7vw, 2.6rem); letter-spacing: -0.5px; }
-    body.blog-page .hero p,
-    body.blog-page .hero .subtitle { font-size: 1.05rem; margin-bottom: 1.25rem; }
-}
+/* Removed page-specific .hero rules — hero now comes from css/main.css */
 
 /* keep the small-screen single-column override (main.css covers full grid behavior) */
 @media (max-width: 768px) {

@@ -4,47 +4,7 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Hero Section - Index specific */
-.hero {
-    min-height: 100vh;
-    padding-top: 80px;
-}
-
-.hero::before {
-    background: 
-        radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.12) 0%, transparent 50%),
-        radial-gradient(circle at 40% 20%, rgba(16, 185, 129, 0.08) 0%, transparent 40%);
-}
-
-.hero::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('data:image/svg+xml,<svg width="60" height="60" xmlns="http://www.w3.org/2000/svg"><circle cx="1" cy="1" r="1" fill="rgba(59,130,246,0.1)"/></svg>');
-    opacity: 0.3;
-}
-
-.hero-content {
-    max-width: 900px;
-}
-
-.hero h1 {
-    font-size: 5rem;
-    letter-spacing: -3px;
-}
-
-.hero .subtitle {
-    font-size: 1.5rem;
-    color: #64748b;
-    margin-bottom: 3rem;
-    font-weight: 300;
-    line-height: 1.6;
-}
-
+/* CTA and other index-specific rules remain */
 .cta-primary {
     display: inline-block;
     padding: 1.1rem 3rem;
