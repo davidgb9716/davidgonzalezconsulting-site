@@ -3,20 +3,44 @@
 /* Hero Section - Contact specific */
 .hero {
     min-height: 40vh;
-    padding-top: 80px; /* MATCH index spacing */
-    padding-bottom: 4rem; /* MATCH index spacing */
+    padding-top: 80px;
+    padding-bottom: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
-/* Ensure hero text spacing follows index conventions */
+.hero > .container {
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
 .hero h1 {
-    margin-bottom: 1.5rem; /* MATCH index: h1 bottom spacing */
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    line-height: 1.05;
+    margin-bottom: 1.25rem;
     text-align: center;
 }
 
 /* subtitle / paragraph spacing in hero */
 .hero p,
 .hero .subtitle {
-    margin-bottom: 3rem; /* MATCH index: subtitle bottom spacing */
+    font-size: clamp(1rem, 2.2vw, 1.5rem);
+    margin-bottom: 2rem;
+}
+
+/* Mobile adjustments kept but tightened */
+@media (max-width: 768px) {
+    .hero {
+        padding-top: 64px;
+        padding-bottom: 1.5rem;
+    }
+    .hero h1 { font-size: clamp(1.6rem, 7vw, 2.6rem); }
+    .hero p,
+    .hero .subtitle { font-size: 1.05rem; margin-bottom: 1rem; }
 }
 
 /* Contact Section */

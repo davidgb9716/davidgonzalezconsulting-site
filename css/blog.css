@@ -2,34 +2,39 @@
 
 body.blog-page .hero {
     min-height: 40vh; /* smaller than the global 100vh */
-    padding-top: 80px; /* match index spacing */
-    padding-bottom: 4rem; /* match index spacing */
+    padding-top: 80px;
+    padding-bottom: 3.5rem;
     display: flex;
-    align-items: center; /* vertically center content */
+    align-items: center;
     justify-content: center;
+    text-align: center;
 }
 
-/* Slightly smaller, more compact headline on blog */
+body.blog-page .hero .container {
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
 body.blog-page .hero h1 {
-    font-size: 5rem;
-    letter-spacing: -3px;
-    line-height: 1.1;
-    margin-bottom: 1.5rem; /* MATCH index: h1 bottom spacing */
-    text-align: center;
+    /* responsive, neat sizing instead of fixed huge value */
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    letter-spacing: -1px;
+    line-height: 1.05;
+    margin-bottom: 1.25rem;
     background: linear-gradient(135deg,#ffffff 0%, #94a3b8 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
 
-/* Keep paragraph readable and reduce large whitespace */
 body.blog-page .hero p,
 body.blog-page .hero .subtitle {
-    font-size: 1.5rem;
+    font-size: clamp(1rem, 2.2vw, 1.5rem);
     color: #64748b;
-    margin: 0 auto 3rem; /* MATCH index: subtitle bottom spacing */
+    margin: 0 auto 2rem;
     max-width: 700px;
-    text-align: center;
     font-weight: 300;
     line-height: 1.6;
 }
@@ -38,12 +43,12 @@ body.blog-page .hero .subtitle {
 @media (max-width: 768px) {
     body.blog-page .hero {
         min-height: auto;
-        padding-top: 72px;
-        padding-bottom: 1.75rem;
+        padding-top: 64px;
+        padding-bottom: 1.5rem;
     }
-    body.blog-page .hero h1 { font-size: 3rem; letter-spacing: -1px; }
+    body.blog-page .hero h1 { font-size: clamp(1.6rem, 7vw, 2.6rem); letter-spacing: -0.5px; }
     body.blog-page .hero p,
-    body.blog-page .hero .subtitle { font-size: 1.15rem; }
+    body.blog-page .hero .subtitle { font-size: 1.05rem; margin-bottom: 1.25rem; }
 }
 
 /* keep the small-screen single-column override (main.css covers full grid behavior) */
