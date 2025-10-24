@@ -18,7 +18,11 @@
     <nav>
         <div class="container">
             <a href="../index.html" class="logo">David González Consulting</a>
-            <ul class="nav-links">
+
+            <!-- mobile menu toggle -->
+            <button class="nav-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Abrir menú">☰</button>
+
+            <ul id="main-nav" class="nav-links">
                 <li><a href="../index.html#servicios">Servicios</a></li>
                 <li><a href="../index.html#proceso">Proceso</a></li>
                 <li><a href="blog.html">Blog</a></li>
@@ -85,5 +89,7 @@
     </footer>
 
     <script src="../scripts/post-loader.js"></script>
+    <script src="../scripts/mobile-nav.js"></script>
+    <script src="../scripts/scroll-top.js"></script>
 </body>
 </html>

@@ -47,10 +47,38 @@ nav .container {
     text-decoration: none;
 }
 
+/* Ocultar el toggle en pantallas grandes y forzar visibilidad solo en móviles */
+nav .nav-toggle { display: none !important; }
+
+/* Mostrar solo en móviles */
+@media (max-width: 768px) {
+    nav .nav-toggle { display: block !important; }
+}
+
+/* Asegurar que en escritorio los enlaces estén siempre visibles */
+@media (min-width: 769px) {
+    nav .nav-links { display: flex !important; } /* keep links visible on desktop */
+}
+
+/* Mobile nav styles */
+.nav-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    font-size: 1.6rem;
+    line-height: 1;
+    cursor: pointer;
+    color: inherit;
+}
+
+/* Default desktop layout (no change) */
 .nav-links {
     display: flex;
-    gap: 3rem;
+    gap: 1.5rem;
     list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
 }
 
 .nav-links a {
@@ -81,6 +109,30 @@ nav .container {
 .nav-links a:hover::after,
 .nav-links a.active::after {
     width: 100%;
+}
+
+@media (max-width: 768px) {
+    nav .nav-toggle { display: block; }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 0;
+        background: var(--bg-color, #fff);
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 60px;
+        padding: 1rem;
+        border-top: 1px solid rgba(0,0,0,0.06);
+        z-index: 999;
+    }
+
+    .nav-links.open { display: flex; }
+
+    .nav-links li { margin: 0.4rem 0; }
+    .nav-links a { display: block; padding: 0.5rem 0.75rem; }
+    nav.nav-open { position: relative; }
 }
 
 /* Hero Section */
@@ -577,4 +629,36 @@ html {
     .contact-info h2 {
         font-size: 2rem;
     }
+}
+
+/* Botón "volver arriba" */
+.scroll-top {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    width: 44px;
+    height: 44px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    color: #fff;
+    border: none;
+    box-shadow: 0 6px 18px rgba(11, 22, 41, 0.6);
+    cursor: pointer;
+    z-index: 1100;
+    transition: transform 0.18s ease, opacity 0.18s ease;
+    opacity: 0;
+}
+.scroll-top svg { display: block; }
+.scroll-top:focus { outline: 2px solid rgba(255,255,255,0.12); outline-offset: 3px; }
+.scroll-top.show { display: flex; opacity: 1; transform: translateY(0); }
+@media (prefers-reduced-motion: reduce) {
+    .scroll-top { transition: none; }
+}
+
+/* Ajuste en pantallas pequeñas para no tapar contenido */
+@media (max-width: 420px) {
+    .scroll-top { right: 0.5rem; bottom: 0.75rem; width: 40px; height: 40px; }
 }
