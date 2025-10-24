@@ -10,26 +10,12 @@ document.addEventListener('DOMContentLoaded', function () {
         document.body.appendChild(overlay);
     }
 
-    function closeMenu(button, links) {
-        if (!button || !links) return;
-        button.setAttribute('aria-expanded', 'false');
-        links.classList.remove('open');
-        overlay.classList.remove('show');
-    }
-
-    function openMenu(button, links) {
-        if (!button || !links) return;
-        button.setAttribute('aria-expanded', 'true');
-        links.classList.add('open');
-        // force reflow to ensure transition
-        void links.offsetWidth;
-        overlay.classList.add('show');
-    }
-
     buttons.forEach(button => {
         const nav = button.closest('nav');
         if (!nav) return;
-        const links = nav.querySelector('.nav-links');
+        const links = nav.querySelector('.nav-links--panel') || nav.querySelector('.nav-links');
+        // remember whether the element originally had the panel class
+        if (links) links.dataset.originalPanel = links.classList.contains('nav-links--panel') ? '1' : '0';
 
         // click toggle
         button.addEventListener('click', () => {
@@ -55,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (e.key === 'Escape') {
             document.querySelectorAll('.nav-toggle').forEach(btn => {
                 const nav = btn.closest('nav');
-                const links = nav && nav.querySelector('.nav-links');
+                const links = nav && (nav.querySelector('.nav-links--panel') || nav.querySelector('.nav-links'));
                 closeMenu(btn, links);
             });
         }
@@ -66,10 +52,39 @@ document.addEventListener('DOMContentLoaded', function () {
         if (window.innerWidth > BREAKPOINT) {
             document.querySelectorAll('.nav-toggle').forEach(btn => {
                 const nav = btn.closest('nav');
-                const links = nav && nav.querySelector('.nav-links');
+                const links = nav && (nav.querySelector('.nav-links--panel') || nav.querySelector('.nav-links'));
                 closeMenu(btn, links);
             });
             overlay.classList.remove('show');
         }
     });
+
+    function closeMenu(button, links) {
+        if (!button || !links) return;
+        button.setAttribute('aria-expanded', 'false');
+        links.classList.remove('open');
+        overlay.classList.remove('show');
+        // restore original nav-links class if we removed it on open (mobile only)
+        if (links.dataset.removedNav === '1') {
+            links.classList.add('nav-links');
+            delete links.dataset.removedNav;
+        }
+        // remove the temporary panel class if it wasn't originally present
+        if (links.dataset.originalPanel === '0') links.classList.remove('nav-links--panel');
+    }
+
+    function openMenu(button, links) {
+        if (!button || !links) return;
+        // ensure panel class exists so panel styles apply
+        if (!links.classList.contains('nav-links--panel')) links.classList.add('nav-links--panel');
+        // on small viewports, the `.nav-links { display:none !important }` hides elements
+        // remove the original `nav-links` class temporarily so the panel becomes visible
+        if (window.innerWidth <= BREAKPOINT && links.classList.contains('nav-links')) {
+            links.classList.remove('nav-links');
+            links.dataset.removedNav = '1';
+        }
+        button.setAttribute('aria-expanded', 'true');
+        links.classList.add('open');
+        overlay.classList.add('show');
+    }
 });
