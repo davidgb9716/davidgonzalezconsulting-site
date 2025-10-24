@@ -10,8 +10,11 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 5rem;
-    max-width: 1200px;
+    /* widen to match main .container so content aligns with nav items */
+    max-width: 1400px; /* was 1200px */
+    width: 100%;
     margin: 0 auto;
+    box-sizing: border-box;
 }
 
 .contact-info {
@@ -247,7 +250,7 @@
 @media (min-width: 1025px) {
     .hero > .container,
     .contact-section > .container {
-        max-width: 1100px;
+        max-width: 1400px; /* align with updated wrapper */
         margin-left: auto;
         margin-right: auto;
         padding-left: 0.75rem;
@@ -256,8 +259,8 @@
     }
 
     .contact-wrapper {
-        /* keep the earlier grid behavior but constrain overall width */
-        max-width: 1100px;
+        /* keep the earlier grid behavior but allow it to span the site width */
+        max-width: 1400px; /* was 1100px */
         margin-left: auto;
         margin-right: auto;
         padding-left: 0;
@@ -270,7 +273,7 @@
 @media (min-width: 1025px) {
     .contact-wrapper {
         grid-template-columns: 1fr 1fr;
-        max-width: 1100px;
+        max-width: 1400px; /* was 1100px */
         margin-left: auto;
         margin-right: auto;
         padding-left: 0;
