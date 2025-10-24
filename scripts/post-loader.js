@@ -39,7 +39,8 @@ loadPost(postData);
 
 async function loadPost(postData) {
     try {
-        const mdUrl = new URL(`posts/${slug}.md`, window.location.href).toString();
+        // fix: resolve posts from project root (one level up from html/)
+        const mdUrl = new URL(`../posts/${slug}.md`, window.location.href).toString();
         // lightweight console hint for debugging
         console.log('Loading post:', slug, mdUrl);
         const response = await fetch(mdUrl);
@@ -101,6 +102,15 @@ async function loadPost(postData) {
     } catch (error) {
         showUnavailable();
     }
+}
+
+function loadPostMarkdown(slug) {
+    // post.html lives in html/, posts/ is one level up at project root
+    return fetch('../posts/' + slug + '.md')
+        .then(response => {
+            if (!response.ok) throw new Error('Failed to load post: ' + response.status);
+            return response.text();
+        });
 }
 
 function renderMarkdownFallback(md) {

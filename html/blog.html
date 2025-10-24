@@ -5,18 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog | David González Consulting - Inteligencia Artificial y Data Science</title>
     <meta name="description" content="Artículos sobre Inteligencia Artificial, Data Science, estrategia digital y tecnología aplicada a negocios. Insights prácticos para MiPyMEs.">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/blog.css">
-    <link rel="icon" href="images/favicon.png" type="image/png">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/blog.css">
+    <link rel="icon" href="../images/favicon.png" type="image/png">
 </head>
 <body>
     <!-- Navigation -->
     <nav>
         <div class="container">
-            <a href="index.html" class="logo">David González Consulting</a>
+            <a href="../index.html" class="logo">David González Consulting</a>
             <ul class="nav-links">
-                <li><a href="index.html#servicios">Servicios</a></li>
-                <li><a href="index.html#proceso">Proceso</a></li>
+                <li><a href="../index.html#servicios">Servicios</a></li>
+                <li><a href="../index.html#proceso">Proceso</a></li>
                 <li><a href="blog.html" class="active">Blog</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
             </ul>
@@ -27,7 +27,7 @@
     <section class="hero">
         <div class="container">
             <h1>Blog</h1>
-            <p>Reflexiones sobre Inteligencia Artificial, Data Science, estrategia empresarial y el futuro de la tecnología aplicada a los negocios.</p>
+            <p>Reflexiones sobre inteligencia artificial, ciencia de datos, estrategia empresarial, y el futuro de la tecnología aplicada a los negocios.</p>
         </div>
     </section>
 
@@ -45,14 +45,14 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-links">
-                    <a href="index.html#servicios">Servicios</a>
-                    <a href="index.html#proceso">Proceso</a>
+                    <a href="../index.html#servicios">Servicios</a>
+                    <a href="../index.html#proceso">Proceso</a>
                     <a href="blog.html">Blog</a>
                     <a href="contacto.html">Contacto</a>
                 </div>
                 
                 <div class="footer-social">
-                    <h3>Sígueme en Redes</h3>
+                    <h3>Sígueme en redes sociales</h3>
                     <div class="social-buttons">
                         <a href="https://www.instagram.com/davidgonzalez.consulting" target="_blank" rel="noopener noreferrer" class="social-btn">
                             <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
@@ -77,10 +77,12 @@
         </div>
     </footer>
 
-    <script src="scripts/posts-config.js"></script>
+    <!-- load posts-config from project root (one level up) -->
+    <script src="../scripts/posts-config.js"></script>
     <script>
         function getReadingTime(slug){
-            return fetch('posts/'+slug+'.md')
+            // fetch posts from root posts/ folder
+            return fetch('../posts/' + slug + '.md')
                 .then(r=>r.text())
                 .then(t=>{
                     const words = t.trim().split(/\s+/).length;
@@ -117,3 +119,5 @@
 
         document.addEventListener('DOMContentLoaded', renderPosts);
     </script>
+</body>
+</html>
