@@ -98,9 +98,11 @@
                 }).catch(()=>'5 min');
         }
 
-        function formatDate(dateString) {
-            const options = { year: 'numeric', month: 'short', day: 'numeric' };
-            return new Date(dateString).toLocaleDateString('es-ES', options);
+        // replaced old formatDate with the index's formatDateShort
+        function formatDateShort(dateString) {
+            if (!dateString) return '';
+            const d = new Date(dateString);
+            return d.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' });
         }
 
         async function renderPosts(){
@@ -115,7 +117,7 @@
                 const readingTime = await getReadingTime(post.slug);
                 const content = '<div class="blog-image">'+post.icon+'</div>' +
                     '<div class="blog-content">' +
-                    '<div class="blog-meta"><div class="blog-date">'+formatDate(post.date)+'</div>' +
+                    '<div class="blog-meta"><div class="blog-date">'+formatDateShort(post.date)+'</div>' +
                     '<div class="blog-reading-time">'+readingTime+'</div></div>' +
                     '<h3>'+post.title+'</h3><p>'+post.description+'</p>' +
                     '<a href="post.html?slug='+post.slug+'" class="read-more">Leer más →</a>' +
