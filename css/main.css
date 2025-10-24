@@ -120,12 +120,16 @@ nav .nav-links--panel a{
 nav .nav-links--panel a:hover{ background: rgba(255,255,255,0.03); transform: translateX(4px); }
 
 /* HERO */
-.hero{
-    min-height:100vh;
-    display:flex; align-items:center;
-    padding-top:80px; padding-bottom:4rem;
+.hero {
+    /* make top and bottom equal and dynamic based on viewport/content */
+    min-height: 40vh; /* allows the hero to be noticeable but not create excessive white space */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-block: clamp(5vh, 20vh, 30vh); /* symmetric, responsive vertical spacing */
     background: linear-gradient(135deg, #0a0f1a 0%, #1e293b 50%, #0f172a 100%);
-    position:relative; overflow:hidden;
+    position: relative;
+    overflow: hidden;
 }
 .hero::before{
     content:''; position:absolute; inset:0;
