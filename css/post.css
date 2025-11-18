@@ -78,6 +78,54 @@
     font-size: 1.2rem;
 }
 
+/* Improve spacing and alignment for markdown content (paragraphs & lists)
+   - Ensure paragraphs have vertical rhythm
+   - Align list markers/text with body copy
+   - Provide comfortable spacing for nested lists
+*/
+.post-content {
+    line-height: 1.85; /* slight increase for better readability */
+}
+
+/* Paragraph spacing inside posts */
+.post-content p {
+    margin: 0 0 1rem 0; /* consistent spacing between paragraphs */
+}
+
+/* Lists: align markers with the flow of text and add comfortable left padding */
+.post-content ul,
+.post-content ol {
+    margin: 0.75rem 0 1rem 1.5rem; /* top, right, bottom, left */
+    padding-left: 0.55rem; /* fine tune marker position */
+    list-style-position: outside;
+    color: #cbd5e1;
+    line-height: 1.7;
+}
+
+/* List items spacing and readable line-height */
+.post-content li {
+    margin: 0.45rem 0;
+    line-height: 1.7;
+}
+
+/* Nested lists get extra indent so they remain visually distinct */
+.post-content ul ul,
+.post-content ul ol,
+.post-content ol ul,
+.post-content ol ol {
+    margin-left: 1rem;
+    padding-left: 0.25rem;
+}
+
+/* Tighten spacing around headings so lists that follow keep consistent rhythm */
+.post-content h2, .post-content h3, .post-content h4 {
+    margin-top: 1.8rem;
+    margin-bottom: 0.9rem;
+}
+
+/* Ensure empty paragraphs (from fallback renderer) don't collapse layout unexpectedly */
+.post-content p:empty { margin: 0.5rem 0; height: auto; }
+
 /* Responsive - Post specific */
 @media (max-width: 768px) {
     .post-container {
