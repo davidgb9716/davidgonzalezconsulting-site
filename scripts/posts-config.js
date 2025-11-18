@@ -3,6 +3,13 @@
 
 window.postsConfig = [
     {
+        slug: 'identificar-oportunidades',
+        title: 'Cómo Identificar Oportunidades Que Otros No Ven',
+        date: '2025-11-17',
+        description: 'Guía rápida para identificar oportunidades, emprender con velocidad, y convertir ideas en negocios reales.',
+        icon: '⚡'
+    },
+    {
         slug: 'roi-ia-pymes',
         title: 'ROI de IA: Lo Que Las PYMEs Necesitan Saber',
         date: '2025-10-15',
@@ -15,13 +22,6 @@ window.postsConfig = [
         date: '2025-10-10',
         description: 'Separando realidad de ficción en el mundo de la ciencia de datos y analítica para líderes empresariales que buscan tomar decisiones informadas.',
         icon: '🧠'
-    },
-    {
-        slug: 'framework-ia',
-        title: 'Framework de Implementación Estratégica de IA',
-        date: '2025-10-05',
-        description: 'Una guía paso a paso para implementar exitosamente IA en tu organización sin caer en los errores comunes que enfrentan la mayoría de las empresas.',
-        icon: '⚡'
     }
 ];
 
