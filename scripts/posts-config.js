@@ -3,6 +3,13 @@
 
 window.postsConfig = [
     {
+        slug: 'habito-diario',
+        title: 'El Hábito Diario Que Transformó Mi Negocio',
+        date: '2025-12-02T00:00:00',
+        description: 'Un artículo que explora el poder transformador de la consistencia, cómo influye en el crecimiento personal y profesional, y por qué pequeñas mejoras diarias pueden multiplicar tus resultados a largo plazo.',
+        icon: '🧠'
+    },
+    {
         slug: 'identificar-oportunidades',
         title: 'Cómo Identificar Oportunidades Que Otros No Ven',
         date: '2025-11-17T00:00:00',
@@ -16,13 +23,6 @@ window.postsConfig = [
         description: 'Comprende el retorno de inversión real al implementar soluciones de inteligencia artificial en pequeñas y medianas empresas. Casos prácticos y métricas clave.',
         icon: '📈'
     },
-    {
-        slug: 'mitos-data-science',
-        title: 'Mitos de Data Science Desmentidos',
-        date: '2025-10-10T00:00:00',
-        description: 'Separando realidad de ficción en el mundo de la ciencia de datos y analítica para líderes empresariales que buscan tomar decisiones informadas.',
-        icon: '🧠'
-    }
 ];
 
 // IMPORTANTE: Los posts se muestran en el orden en que aparecen aquí
