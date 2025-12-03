@@ -21,7 +21,7 @@ Sin embargo, para alcanzar tus metas NECESITAS ser consistente. O dicho de otra 
 
 Le atribuyo la mayoría del progreso que he hecho en mi negocio a la consistencia. No comencé siendo un experto en los negocios, la ciencia de datos, la estrategia empresarial o la inteligencia artificial. Todas estas son cosas que he aprendido a lo largo de mi vida. Tampoco son cosas que aprendí o estudié una vez y ya. Son temas a los que he dedicado mi vida para aprender y dominar, pues en estas áreas decidí desarrollar mi pericia.
 
-Cuando hablamos de la pericia, es fácil pensar que no todos estamos hechos para alcanzar un alto grado de dominio en un conocimiento o una habilidad. Sin embargo, esta es una limitación que nosotros mismos nos imponemos. Si tu sustento viene de una habilidad con demanda en el mercado, ¿no tendría sentido **intentar** ser el mejor del mundo en esa área o tema? Esto te permite volverte irreemplazable, ya sea como empleado o como emprendedor.
+Cuando hablamos de la pericia, es fácil pensar que no todos estamos hechos para alcanzar un alto grado de dominio en un conocimiento o una habilidad. Sin embargo, esta es una limitación que nosotros mismos nos imponemos. Si tu sustento viene de una habilidad con demanda en el mercado, ¿no tendría sentido intentar ser el mejor del mundo en esa área o tema? Esto te permite volverte irreemplazable, ya sea como empleado o como emprendedor.
 
 Incluso si aprendes un tema o practicas una habilidad de manera subóptima, no se pueden ignorar los resultados que se pueden obtener en un año, en varios años o incluso en décadas de consistencia.
 
