@@ -3,6 +3,13 @@
 
 window.postsConfig = [
     {
+        slug: 'errores-costosos-emprendimiento',
+        title: 'Errores Costosos Que Cometí en Mi Primer Año (Y Cómo Evitarlos)',
+        date: '2025-12-31T00:00:00',
+        description: 'Una reflexión sobre los errores, aprendizajes, y sacrificios de mi primer año emprendiendo: desde fallas en marketing y ventas hasta el síndrome del impostor, y cómo cada tropiezo me llevó a crecer personal y profesionalmente.',
+        icon: '📈'
+    },
+    {
         slug: 'habito-diario',
         title: 'El Hábito Diario Que Transformó Mi Negocio',
         date: '2025-12-02T00:00:00',
@@ -15,13 +22,6 @@ window.postsConfig = [
         date: '2025-11-17T00:00:00',
         description: 'Guía rápida para identificar oportunidades, emprender con velocidad, y convertir ideas en negocios reales.',
         icon: '⚡'
-    },
-    {
-        slug: 'roi-ia-pymes',
-        title: 'ROI de IA: Lo Que Las PYMEs Necesitan Saber',
-        date: '2025-10-15T00:00:00',
-        description: 'Comprende el retorno de inversión real al implementar soluciones de inteligencia artificial en pequeñas y medianas empresas. Casos prácticos y métricas clave.',
-        icon: '📈'
     },
 ];
 
